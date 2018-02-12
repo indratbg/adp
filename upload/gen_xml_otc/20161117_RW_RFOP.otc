@@ -1,0 +1,74 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20161117R_DANA086R_ANTM</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001A14400139</Field>
+<Field name="counterpartCode">PC001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ANTM</Field>
+<Field name="numberOfSecurities">500000</Field>
+<Field name="tradeDate">20161117</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20161117</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM PC001</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20161117R_RMAG001R_MYRX</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001J70600170</Field>
+<Field name="counterpartCode">HD001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">MYRX</Field>
+<Field name="numberOfSecurities">22160000</Field>
+<Field name="tradeDate">20161117</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20161117</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM HD001</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20161117R_SYAH005R_BUMI</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001327000125</Field>
+<Field name="counterpartCode">KI001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BUMI</Field>
+<Field name="numberOfSecurities">500000</Field>
+<Field name="tradeDate">20161117</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20161117</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM KI001</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20161117R_SYAH005R_TRAM</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001327000125</Field>
+<Field name="counterpartCode">KI001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">TRAM</Field>
+<Field name="numberOfSecurities">4000000</Field>
+<Field name="tradeDate">20161117</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20161117</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM KI001</Field>
+</Record>
+</Message>

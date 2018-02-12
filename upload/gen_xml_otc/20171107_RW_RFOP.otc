@@ -1,0 +1,20 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20171107R_HASA009R_RIMO</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171107</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM XA001</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001343200135</Field>
+<Field name="counterpartCode">XA001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">RIMO</Field>
+<Field name="numberOfSecurities">1250000</Field>
+<Field name="tradeDate">20171107</Field>
+</Record>
+</Message>

@@ -1,0 +1,38 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170810_MOVE_EDWI001R_BUMI</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170810</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">EDWI001R Deliver BUMI to EDWI001M</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001027800187</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BUMI</Field>
+<Field name="numberOfSecurities">10760000</Field>
+<Field name="tradeDate">20170810</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20170810_MOVE_EDWI001M_BUMI</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170810</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">EDWI001M Recv BUMI from EDWI001R</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001164300106</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BUMI</Field>
+<Field name="numberOfSecurities">10760000</Field>
+<Field name="tradeDate">20170810</Field>
+</Record>
+</Message>

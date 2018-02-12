@@ -1,0 +1,15 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">13102017_EXE_HONK001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE HONKY HARJO</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20171018</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ROTI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001A03700130</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">66666</Field>
+</Record>
+</Message>

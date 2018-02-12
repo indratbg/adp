@@ -1,0 +1,67 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">30052017_EXE_CHRI005R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE CHRISTELLA M.E.LAKSMYARTINI</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001000100122</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">100</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">30052017_EXE_EDYS001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE EDY SUWARNO AL JAP L SING</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001037300127</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">165300</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">30052017_EXE_HARI001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE HARINCK KAREL LODEWYK</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001019100196</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">2600</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">30052017_EXE_NURI003R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE NURIANI LESMANA</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001B09000195</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">100</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">30052017_EXE_TRIA004R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE TRIANASARI ARIEF</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001001400124</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">127600</Field>
+</Record>
+</Message>

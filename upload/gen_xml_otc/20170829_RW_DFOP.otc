@@ -1,0 +1,56 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170829W_EDYS001R_PDES</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170829</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO FZ001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001037300127</Field>
+<Field name="counterpartCode">FZ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">PDES</Field>
+<Field name="numberOfSecurities">215000</Field>
+<Field name="tradeDate">20170829</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20170829W_MUHA053R_ERAA</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170829</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO DR001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001B05800108</Field>
+<Field name="counterpartCode">DR001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ERAA</Field>
+<Field name="numberOfSecurities">1000000</Field>
+<Field name="tradeDate">20170829</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20170829W_MUHA053R_WSBP</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170829</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO DR001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001B05800108</Field>
+<Field name="counterpartCode">DR001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">WSBP</Field>
+<Field name="numberOfSecurities">1900000</Field>
+<Field name="tradeDate">20170829</Field>
+</Record>
+</Message>

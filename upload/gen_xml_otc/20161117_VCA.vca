@@ -1,0 +1,54 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">17112016_EXE_ALEX020R</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20161123</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">WIKA-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001453400118</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">2200</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE ALEXANDER TEDJA</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">17112016_EXE_ALIC002R</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20161123</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">WIKA-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001J02100184</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">31400</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE ALI CHENDRA</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">17112016_EXE_SANS001R</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20161123</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">WIKA-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001155800175</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">45800</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE SANSAN YULIANA</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">17112016_EXE_SIMA001R</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20161123</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">WIKA-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001466600101</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">15500</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE SIMARBA ATONG TJIA</Field>
+</Record>
+</Message>
