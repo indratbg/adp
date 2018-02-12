@@ -1,1 +1,0 @@
-<iframe src="<?php echo $url; ?>" class="span12" style="min-height:600px;"></iframe>

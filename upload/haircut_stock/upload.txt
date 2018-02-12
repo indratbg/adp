@@ -1,7 +1,0 @@
-List of Haircut
-Date Uploaded: 20171018
-Date|Instrument Code|Instrument Name|Haircut (%)|Keterangan|
-20171018|KIOS|KIOSON KOMERSIAL INDONESIA Tbk|50|UNSUSPEND|
-20171018|LCGP|EUREKA PRIMA JAKARTA Tbk|70|UNSUSPEND|
-
-
