@@ -1,0 +1,20 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170608R_TOMM005R_BJBR</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170608</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM AG001</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001318900120</Field>
+<Field name="counterpartCode">AG001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BJBR</Field>
+<Field name="numberOfSecurities">470800</Field>
+<Field name="tradeDate">20170608</Field>
+</Record>
+</Message>

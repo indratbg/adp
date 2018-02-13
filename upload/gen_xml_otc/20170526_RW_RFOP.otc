@@ -1,0 +1,38 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170526R_KASH001R_ASII</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170526</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM DBJK1</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001B17600156</Field>
+<Field name="counterpartCode">DBJK1</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ASII</Field>
+<Field name="numberOfSecurities">265863000</Field>
+<Field name="tradeDate">20170526</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20170526R_KASH001R_SMDM</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170526</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM DBJK1</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001B17600156</Field>
+<Field name="counterpartCode">DBJK1</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">SMDM</Field>
+<Field name="numberOfSecurities">10000000</Field>
+<Field name="tradeDate">20170526</Field>
+</Record>
+</Message>

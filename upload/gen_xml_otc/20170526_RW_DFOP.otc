@@ -1,0 +1,38 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170526W_YASN001R_ELTY</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170526</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO EP001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001J74000123</Field>
+<Field name="counterpartCode">EP001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ELTY</Field>
+<Field name="numberOfSecurities">500000</Field>
+<Field name="tradeDate">20170526</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20170526W_YASN001R_PPRO</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170526</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO EP001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001J74000123</Field>
+<Field name="counterpartCode">EP001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">PPRO</Field>
+<Field name="numberOfSecurities">700000</Field>
+<Field name="tradeDate">20170526</Field>
+</Record>
+</Message>

@@ -1,0 +1,38 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170616_MOVE_JONS002R_SHIP</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170616</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">JONS002R Deliver SHIP to JONS003R</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001JE9400166</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">SHIP</Field>
+<Field name="numberOfSecurities">550000</Field>
+<Field name="tradeDate">20170616</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20170616_MOVE_JONS003R_SHIP</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170616</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">JONS003R Recv SHIP from JONS002R</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001B04600136</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">SHIP</Field>
+<Field name="numberOfSecurities">550000</Field>
+<Field name="tradeDate">20170616</Field>
+</Record>
+</Message>

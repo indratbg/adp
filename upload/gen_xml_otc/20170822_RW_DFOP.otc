@@ -1,0 +1,20 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170822W_EDYS001R_BUVA</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170822</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO MU001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001037300127</Field>
+<Field name="counterpartCode">MU001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BUVA</Field>
+<Field name="numberOfSecurities">54143100</Field>
+<Field name="tradeDate">20170822</Field>
+</Record>
+</Message>

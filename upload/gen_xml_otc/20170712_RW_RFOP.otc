@@ -1,0 +1,20 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170712R_GRAH002R_DILD</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170712</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">RECEIVE FROM PO001</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001B13700150</Field>
+<Field name="counterpartCode">PO001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">DILD</Field>
+<Field name="numberOfSecurities">2800000</Field>
+<Field name="tradeDate">20170712</Field>
+</Record>
+</Message>

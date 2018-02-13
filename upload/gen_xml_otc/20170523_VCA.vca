@@ -1,0 +1,67 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">23052017_EXE_ALWI018R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE ALWI HALIM</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170523</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001J92800137</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">1754500</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">23052017_EXE_KISH003R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE KISHINCHAND NARAINDAS NATHANI</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170523</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001340800191</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">255200</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">23052017_EXE_LENA001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE LENAWATI SETIADI P</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170523</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001007300148</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">63900</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">23052017_EXE_MIRA006R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE MIRAH SUTANTO</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170523</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001357600187</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">1942000</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">23052017_EXE_TINI001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE TINIWATI TJIUPEK</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170523</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001659600189</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">5100</Field>
+</Record>
+</Message>

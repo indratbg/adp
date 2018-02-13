@@ -1,0 +1,80 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">26052017_EXE_BONA001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE BONA LAMBOK PARAPAT</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001087100129</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">51000</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">26052017_EXE_BUDI004R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE BUDI SUMADIHARDJA</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001101200188</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">22700</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">26052017_EXE_BUDI057R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE BUDI HARTONO</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001902600145</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">1276300</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">26052017_EXE_DULH001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE DULHARTONO AGUS</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001037100164</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">200</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">26052017_EXE_HARD002R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE HARDY SETIADY</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001412900190</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">89300</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">26052017_EXE_LAYP001R</Field>
+<Field name="additionalProceedRequest"></Field>
+<Field name="description">EXE LAY,PURNAMA JUSUP</Field>
+<Field name="corporateActionType">EXE</Field>
+<Field name="effectiveDate">20170530</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">BNLI-R</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001821600192</Field>
+<Field name="optionName">DEFAULT</Field>
+<Field name="optionQuantity">12700</Field>
+</Record>
+</Message>
