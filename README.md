@@ -1,0 +1,2 @@
+# adp
+Ananta dinamika pratama
