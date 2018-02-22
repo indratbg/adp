@@ -1,0 +1,38 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20171128_MOVE_WIJA010T_ELSA</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171128</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">WIJA010T Deliver ELSA to WIJA010M</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001695800185</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ELSA</Field>
+<Field name="numberOfSecurities">900000</Field>
+<Field name="tradeDate">20171128</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20171128_MOVE_WIJA010M_ELSA</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171128</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">WIJA010M Recv ELSA from WIJA010T</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001672000126</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ELSA</Field>
+<Field name="numberOfSecurities">900000</Field>
+<Field name="tradeDate">20171128</Field>
+</Record>
+</Message>

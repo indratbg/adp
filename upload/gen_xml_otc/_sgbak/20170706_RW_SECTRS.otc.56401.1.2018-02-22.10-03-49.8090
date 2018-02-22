@@ -1,0 +1,38 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20170706_MOVE_KAYO001T_SIMP</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170706</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">KAYO001T Deliver SIMP to KAYO001R</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001757900191</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">SIMP</Field>
+<Field name="numberOfSecurities">135500</Field>
+<Field name="tradeDate">20170706</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20170706_MOVE_KAYO001R_SIMP</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20170706</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">KAYO001R Recv SIMP from KAYO001T</Field>
+<Field name="instructionType">RFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001451800123</Field>
+<Field name="counterpartCode">YJ001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">SIMP</Field>
+<Field name="numberOfSecurities">135500</Field>
+<Field name="tradeDate">20170706</Field>
+</Record>
+</Message>

@@ -1,0 +1,74 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20171005W_SOEH007R_AGRO</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171005</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO FS001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001775500136</Field>
+<Field name="counterpartCode">FS001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">AGRO</Field>
+<Field name="numberOfSecurities">341000</Field>
+<Field name="tradeDate">20171005</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20171005W_SOEH007T_AGRO</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171005</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO FS001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001775400106</Field>
+<Field name="counterpartCode">FS001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">AGRO</Field>
+<Field name="numberOfSecurities">450000</Field>
+<Field name="tradeDate">20171005</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20171005W_SOEH007T_ANTM</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171005</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO FS001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001775400106</Field>
+<Field name="counterpartCode">FS001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">ANTM</Field>
+<Field name="numberOfSecurities">400000</Field>
+<Field name="tradeDate">20171005</Field>
+</Record>
+<Record name="data">
+<Field name="externalReference">20171005W_SOEH007T_INDY</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171005</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO FS001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001775400106</Field>
+<Field name="counterpartCode">FS001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">INDY</Field>
+<Field name="numberOfSecurities">58600</Field>
+<Field name="tradeDate">20171005</Field>
+</Record>
+</Message>

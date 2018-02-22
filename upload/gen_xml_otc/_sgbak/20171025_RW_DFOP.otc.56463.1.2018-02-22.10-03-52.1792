@@ -1,0 +1,20 @@
+<Message>
+<Record name="data">
+<Field name="externalReference">20171025W_RIST005R_WTON</Field>
+<Field name="currencyCode">IDR</Field>
+<Field name="settlementAmount"></Field>
+<Field name="settlementDate">20171025</Field>
+<Field name="purpose">NONEXCHG</Field>
+<Field name="tradingReference"></Field>
+<Field name="settlementReason">OWNE</Field>
+<Field name="description">DELIVER TO EP001</Field>
+<Field name="instructionType">DFOP</Field>
+<Field name="participantCode">YJ001</Field>
+<Field name="participantAccount">YJ001J74900102</Field>
+<Field name="counterpartCode">EP001</Field>
+<Field name="securityCodeType">LOCAL</Field>
+<Field name="securityCode">WTON</Field>
+<Field name="numberOfSecurities">50000</Field>
+<Field name="tradeDate">20171025</Field>
+</Record>
+</Message>
