@@ -10,13 +10,25 @@ class Rptprofitlosscompany extends ARptForm
 	public $end_branch;
 	public $dummy_date;
 	public $tempDateCol   = array();  
+	public $col_name = array('bgn_dt'=>'Bgn Date',
+							'end_dt'=>'End Date',
+							'grp_1'=>'Group 1',
+							'grp_2'=>' Group 2',
+							'grp_3'=>'Group 3',
+							'grp_4'=>'Group 4',
+							'grp_5'=>'Group 5',
+							'gl_acct_cd'=>'GL Account',
+							'macct_name'=>'Account name',
+							'curr_mon'=>'Current Month',
+							'last_mon'=>'Last Month',
+							'bal_ytd'=>'Up to Current Month');
 	
 	public function rules()
 	{
 		return array(
 			array('bgn_date, end_date', 'application.components.validator.ADatePickerSwitcherValidatorSP'),
 			
-			array('month,year,dummy_date, bgn_branch, end_branch','safe')
+			array('vo_random_value,vp_userid,month,year,dummy_date, bgn_branch, end_branch','safe')
 		);
 	}
 

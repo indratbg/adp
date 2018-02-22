@@ -46,7 +46,7 @@ class Rptgeneralledger extends ARptForm
                 'application.components.validator.ADatePickerSwitcherValidatorSP'
             ),
             array(
-                'vo_random_value,month,year,report_mode,cancel_flg,branch_cd,branch_option,from_gla,to_gla,from_sla,to_sla',
+                'vp_userid,vo_random_value,month,year,report_mode,cancel_flg,branch_cd,branch_option,from_gla,to_gla,from_sla,to_sla',
                 'safe'
             )
         );

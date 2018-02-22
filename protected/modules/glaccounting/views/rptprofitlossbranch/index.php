@@ -41,6 +41,9 @@ $quarter = array('0'=>'1. January - March','1'=>'2. April - June','2'=>'3. July 
 <br>
 
 <input type="hidden" name="scenario" id="scenario" />
+ <?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
+<div class="error_msg">
+    </div>
 <div class="row-fluid">
     <div id="rep_ui_yj">
         <div class="span6">
@@ -55,7 +58,7 @@ $quarter = array('0'=>'1. January - March','1'=>'2. April - June','2'=>'3. July 
                     'prompt' => '-Select-'
                 ));
                 ?>
-                <?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
+              
             </div>
             <div class="span1">
                 <label>Year</label>
@@ -215,6 +218,7 @@ $quarter = array('0'=>'1. January - March','1'=>'2. April - June','2'=>'3. July 
 <iframe id="iframe" src="<?php echo $url; ?>" class="span12" style="min-height:600px;"></iframe>
 <?php echo $form->datePickerRow($model,'dummy_date',array('label'=>false,'disabled'=>true,'style'=>'display:none'));?>
 <?php $this->endWidget(); ?>
+<
 
 
 
@@ -247,9 +251,11 @@ $this->widget('bootstrap.widgets.TbProgress',
 ?>
 
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog'); ?>
+
+
 <script>
 	var url_xls = '<?php echo $url_xls ?>';
-	
+	var ui_flg = '<?php echo $ui_flg;?>';
 	init();
 	function init()
 	{
@@ -340,11 +346,12 @@ $this->widget('bootstrap.widgets.TbProgress',
 		$("#iframe").css('width',($(window).width()));
 	});
 	$('#Rptprofitlossbranch_year').change(function(){
+		
 		if($('#rpt_pres_3').is(':checked'))
 		{
-			var dt = $('#Rptprofitlossbranch_doc_date').val().split('/');
-			
+		    var dt = $('#Rptprofitlossbranch_doc_date').val().split('/');
 			$('#Rptprofitlossbranch_doc_date').val(dt[0]+'/'+dt[1]+'/'+$('#Rptprofitlossbranch_year').val());
+			$('.tdate').datepicker('update');
 		}
 	});
 	
@@ -355,7 +362,10 @@ $this->widget('bootstrap.widgets.TbProgress',
 	
 	$('#Rptprofitlossbranch_month, #Rptprofitlossbranch_year').change(function(){
         var date = $('#Rptprofitlossbranch_doc_date').val().split('/');
-         $('#Rptprofitlossbranch_doc_date').val(date[0]+'/'+$('#Rptprofitlossbranch_month').val()+'/'+$('#Rptprofitlossbranch_year').val());
+         if(ui_flg == 'YJ')
+         {
+             $('#Rptprofitlossbranch_doc_date').val(date[0]+'/'+$('#Rptprofitlossbranch_month').val()+'/'+$('#Rptprofitlossbranch_year').val());
+         }
         Get_End_Date($('#Rptprofitlossbranch_doc_date').val())
     });
 	function Get_End_Date(tgl)
@@ -372,11 +382,58 @@ $this->widget('bootstrap.widgets.TbProgress',
         $('#Rptprofitlossbranch_doc_date').val(new_date);
         $('.tdate').datepicker('update');
     }
-     $('#btnSubmit').click(function(){
+     $('#btnSubmit').click(function(e){
         $('#mywaitdialog').dialog('open');
-        $('#scenario').val('print');
+       e.preventDefault()
+        $('.error_msg').empty();
+       $('#scenario').val('print');
+       $.ajax({
+                    'type'      : 'POST',
+                    'url'       : '<?php echo $this->createUrl('AjxShowReport'); ?>',
+                    'dataType'  : 'json',
+                    'data'      : $('#importTransaction-form').serialize(),
+                    'success'   :   function (data) 
+                                {
+                                    $('#mywaitdialog').dialog('close');
+                                    if(data.status='success')
+                                    {
+                                           if(data.error_msg)
+                                           {
+                                               Message('danger', data.error_msg)
+                                           }
+                                           else
+                                           {
+                                               $('#iframe').show();
+                                                $("#iframe").attr("src", data.url);
+                                                $('#btn_xls').prop('disabled',false);
+                                                $('#Rptprofitlossbranch_vo_random_value').val(data.rand_value);
+                                           }
+                                    }
+                                }
+                });
+    
     })
     $('#btn_xls').click(function() {
         $('#scenario').val('export');
     });
+    
+    
+  function Message(cls, msg)
+    {
+        $('.error_msg').find('div').remove();
+        $('.error_msg').append($('<div>')
+                       .attr('class', 'alert alert-block alert-' + cls)
+                            .append($('<button>').attr('type', 'button')
+                            .attr('class', 'close')
+                            .attr('data-dismiss', 'alert')
+                            .attr('aria-label', 'Close')
+                            .append($('<span>')
+                            .attr('aria-hidden', true)
+                            .html('X')
+                            )
+                           )
+                               .append($('<p>').html(msg))
+           );
+  }
+    
 </script>

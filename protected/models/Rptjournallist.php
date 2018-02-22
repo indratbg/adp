@@ -1,5 +1,6 @@
 <?php
 
+
 class Rptjournallist extends ARptForm
 {
 
@@ -7,14 +8,24 @@ class Rptjournallist extends ARptForm
 	public $to_date;
 	public $type;
 	public $dummy_date;
-    public $col_name = array('doc_date','sdoc_num','typ','folder_cd','gl_acct_cd','sl_acct_cd','acct_name','ledger_nar','debit','credit','amt');
+	public $col_name = array('sdoc_num'=>'Journal Number',
+		'doc_date'=>'Doc Date',
+		'typ'=>'Type',
+		'folder_cd'=>'File Code',
+		'gl_acct_cd'=>'Gl Account',
+		'sl_acct_cd'=>'Sl Account',
+		'acct_name'=>'Acct Name',
+		'ledger_nar'=>'Ledger Description',
+		'debit'=>'Debit',
+		'credit'=>'Credit',
+		'amt'=>'Amount');
 	public $tempDateCol   = array();  
 	
 	public function rules()
 	{
 		return array(
 			array('from_date,to_date', 'application.components.validator.ADatePickerSwitcherValidatorSP'),
-			array('type,vo_random_value','safe')
+			array('type,vo_random_value,vp_userid','safe')
 		);
 	}
 	
@@ -29,24 +40,24 @@ class Rptjournallist extends ARptForm
 			
 		);
 	}
-		
+
 
 	public function executeRpt($type)
 	{
-	 
+
 		$connection  = Yii::app()->dbrpt;
 		$transaction = $connection->beginTransaction();
 		
 		try{
 			$query  = "CALL  SPR_JOURNAL_LIST( TO_DATE(:P_BGN_DATE,'YYYY-MM-DD'),
-											    TO_DATE(:P_END_DATE,'YYYY-MM-DD'),
-											    :P_TYPE,
-											    :P_USER_ID,
-											    TO_DATE(:P_GENERATE_DATE,'YYYY-MM-DD HH24:MI:SS'),
-											    :P_RANDOM_VALUE,
-											    :P_ERROR_CD,
-											    :P_ERROR_MSG)";
-					
+											TO_DATE(:P_END_DATE,'YYYY-MM-DD'),
+											:P_TYPE,
+											:P_USER_ID,
+											TO_DATE(:P_GENERATE_DATE,'YYYY-MM-DD HH24:MI:SS'),
+											:P_RANDOM_VALUE,
+											:P_ERROR_CD,
+											:P_ERROR_MSG)";
+
 			$command = $connection->createCommand($query);
 			$command->bindValue(":P_BGN_DATE",$this->from_date,PDO::PARAM_STR);
 			$command->bindValue(":P_END_DATE",$this->to_date,PDO::PARAM_STR);
@@ -65,7 +76,7 @@ class Rptjournallist extends ARptForm
 			$transaction->rollback();
 			if($this->vo_errcd == -999){
 				$this->vo_errmsg = $ex->getMessage();
-		    }
+			}
 		}
 		
 		if($this->vo_errcd < 0)

@@ -6,11 +6,10 @@ $this->menu=array(
 );
 ?>
 
-<?php AHelper::showFlash($this) ?> <!-- show flash -->
-<?php AHelper::applyFormatting() ?> 
+<?php AHelper::ajaxFlash(); ?> <!-- show flash -->
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
-	'id'=>'iporeport-form',
+	'id'=>'plcompany-form',
 	'enableAjaxValidation'=>false,
 	'type'=>'horizontal'
 )); ?>
@@ -18,24 +17,9 @@ $this->menu=array(
 <?php 
 	echo $form->errorSummary(array($model));
 ?>
-
-<?php
-$month = array(
-	'01' => 'January',
-	'02' => 'February',
-	'03' => 'March',
-	'04' => 'April',
-	'05' => 'May',
-	'06' => 'June',
-	'07' => 'July',
-	'08' => 'August',
-	'09' => 'September',
-	'10' => 'October',
-	'11' => 'November',
-	'12' => 'December'
-);
-
-?>
+<input type="hidden" name="scenario" id="scenario" />
+<?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
+<?php echo $form->textField($model,'vp_userid',array('style'=>'display:none'));?>
 
 <br/>
 
@@ -45,7 +29,7 @@ $month = array(
 				<label>Month</label>
 			</div>
 			<div class="span2">
-				<?php echo $form->dropDownList($model, 'month', $month, array(
+				<?php echo $form->dropDownList($model, 'month', AConstant::getArrayMonth(), array(
 					'class' => 'span8',
 					'prompt' => '-Select-'
 				));
@@ -91,10 +75,16 @@ $month = array(
 		'id'=>'btnSubmit',
 		'buttonType'=>'submit',
 		'type'=>'primary',
-		'label'=>'Show Report',
+		'label'=>'Show',
+	)); ?>
+	&emsp;
+	<?php $this->widget('bootstrap.widgets.TbButton', array(
+		'id'=>'btn_xls',
+		'buttonType'=>'submit',
+		'type'=>'primary',
+		'label'=>'Save to Excel',
 	)); ?>
 	
-		<a href="<?php echo $url_xls ;?>" id="btn_xls" class="btn btn-primary">Save to Excel</a>
 </div>
 
 <br/>
@@ -134,16 +124,12 @@ $month = array(
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog'); ?>
 <script>
 
-	var url_xls = '<?php echo $url_xls ?>';
 	init();
 	function init()
 	{
 		$('.tdate').datepicker({'format':'dd/mm/yyyy','language':'en'});
-		
-		if(url_xls=='')
-		{
-			$('#btn_xls').attr('disabled',true);
-		}
+		$('#btn_xls').attr('disabled',true);
+
 	}
 	$('#Rptprofitlosscompany_bgn_branch').change(function(){
 		$('#Rptprofitlosscompany_end_branch').val($('#Rptprofitlosscompany_bgn_branch').val());
@@ -159,8 +145,52 @@ $month = array(
 		$('#Rptprofitlosscompany_bgn_date').val(doc_date[0]+'/'+doc_date[1]+'/'+$('#Rptprofitlosscompany_year').val());
 	});
 	
-	$('#btnSubmit').click(function(){
+	$('#btnSubmit').click(function(e){
+		e.preventDefault();
+		$('.error_msg').empty();
+		$('#scenario').val('print');
 		$('#mywaitdialog').dialog('open');
-	})
+		submitData();
+	});
+	$('#btn_xls').click(function(){
+
+		$('#scenario').val('export');
+	});
+	function submitData()
+	{
+
+		$.ajax({
+			'type'      : 'POST',
+			'url'       : '<?php echo $this->createUrl('index'); ?>',
+			'dataType'  : 'json',
+			'data'      : $('#plcompany-form').serialize(),
+			'success'   :   function (data) 
+			{
+				
+				if(data.status='success')
+				{
+					if(!data.error_msg)
+					{
+						$('#Rptprofitlosscompany_vo_random_value').val(data.vo_random_value);
+						$('#Rptprofitlosscompany_vp_userid').val(data.vp_userid);
+						$('#iframe').show();
+						$("#iframe").attr("src", data.url);
+						
+						$("#iframe").load(function(){
+						$('#mywaitdialog').dialog('close');	
+						});
+						
+						$('#btn_xls').attr('disabled',false);
+					}
+					else
+					{
+						$('#mywaitdialog').dialog('close');
+						AjaxFlash('danger', data.error_msg)
+					}
+				}
+
+			}
+		});
+	}
 </script>
 

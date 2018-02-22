@@ -5,14 +5,35 @@ class Rptprofitlossrecap extends ARptForm
 
 	public $month;
 	public $year;
-	public $tempDateCol   = array();  
+	public $tempDateCol   = array();
+	public $col_name = array('grp1'=>'Group 1',
+							'gl_acct_group_name'=>'GL Acct Group Name',
+							'gl_acct_group'=>'Gl Acct Group Account',
+							'gl_acct_cd'=>'Gl Account Code',
+							'main_acct_name'=>'Sub Account name',
+							'subacct'=>'Sub Account',
+							'lr_faktor'=>'LR Faktor',
+							'acct_name'=>'Account Name',
+							'amt1'=>'Jakarta',
+							'amt2'=>'Bandung',
+							'amt3'=>'Pluit',
+							'amt4'=>'Surabaya',
+							'amt5'=>'Kelapa Gading',
+							'amt6'=>'Mangga Dua',
+							'amt7'=>'Palembang',
+							'amt8'=>'Medan',
+							'amt9'=>'Karawaci',
+							'amt10'=>'Gading Serpong',
+							'amt11'=>'Puri',
+							'amt12'=>'LOTS',
+							'tot_amt'=>'Total');  
 	
 	public function rules()
 	{
 		return array(
 			//array('from_date,to_date', 'application.components.validator.ADatePickerSwitcherValidatorSP'),
 			
-			array('month,year','safe')
+			array('vo_random_value,vp_userid,month,year','safe')
 		);
 	}
 	

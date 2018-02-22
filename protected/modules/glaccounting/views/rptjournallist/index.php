@@ -1,7 +1,7 @@
 <style>
-	input[type=radio] {
-		margin-top: -3px;
-	}
+input[type=radio] {
+	margin-top: -3px;
+}
 </style>
 <?php
 $this->breadcrumbs = array(
@@ -27,104 +27,108 @@ $this->menu = array(
 );
 ?>
 
+<?php AHelper::AjaxFlash();?>
 <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-		'id' => 'importTransaction-form',
-		'enableAjaxValidation' => false,
-		'type' => 'horizontal'
-	));
+	'id' => 'journallist-form',
+	'enableAjaxValidation' => false,
+	'type' => 'horizontal'
+));
 ?>
+
 <br />
+
 <?php echo $form->errorSummary(array($model));?>
 <input type="hidden" name="scenario" id="scenario" />
 <div class="row-fluid">
 	<div class="span6">
-	<div class="control-group">
-		<div class="span1">
-			<label>Date</label>
+		<div class="control-group">
+			<div class="span1">
+				<label>Date</label>
+			</div>
+			<div class="span4">
+				<?php echo $form->textField($model,'from_date',array('class'=>'span8 tdate','placeholder'=>'dd/mm/yyyy'));?>
+				<?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
+				<?php echo $form->textField($model,'vp_userid',array('style'=>'display:none'));?>
+			</div>
+			<div class="span1">
+				<label>To</label>
+			</div>
+			<div class="span4">
+				<?php echo $form->textField($model,'to_date',array('class'=>'span8 tdate','placeholder'=>'dd/mm/yyyy'));?>
+			</div>
 		</div>
-		<div class="span4">
-			<?php echo $form->textField($model,'from_date',array('class'=>'span8 tdate','placeholder'=>'dd/mm/yyyy'));?>
-			<?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
+		<div class="control-group">
+			<div class="span1">
+				<label>Type</label>
+			</div>
+			<div class="span6">
+				<input type="radio" name="Rptjournallist[type]" value="0" <?php echo $model->type=='0'?'checked':'';?> />&nbsp; All (w/o Cancelled + reversal)
+			</div>
 		</div>
-		<div class="span1">
-			<label>To</label>
+		<div class="control-group">
+			<div class="span5 offset1">
+				<input type="radio" name="Rptjournallist[type]" value="1" <?php echo $model->type=='1'?'checked':'';?> />&nbsp; Transaction
+			</div>
 		</div>
-		<div class="span4">
-			<?php echo $form->textField($model,'to_date',array('class'=>'span8 tdate','placeholder'=>'dd/mm/yyyy'));?>
+		<div class="control-group">
+			<div class="span5 offset1">
+				<input type="radio" name="Rptjournallist[type]" value="2" <?php echo $model->type=='2'?'checked':'';?> />&nbsp;  Cancelled + reversal
+			</div>
 		</div>
-	</div>
-	<div class="control-group">
-		<div class="span1">
-			<label>Type</label>
-		</div>
-		<div class="span6">
-			<input type="radio" name="Rptjournallist[type]" value="0" <?php echo $model->type=='0'?'checked':'';?> />&nbsp; All (w/o Cancelled + reversal)
-		</div>
-	</div>
-	<div class="control-group">
-		<div class="span5 offset1">
-			<input type="radio" name="Rptjournallist[type]" value="1" <?php echo $model->type=='1'?'checked':'';?> />&nbsp; Transaction
-		</div>
-	</div>
-	<div class="control-group">
-		<div class="span5 offset1">
-			<input type="radio" name="Rptjournallist[type]" value="2" <?php echo $model->type=='2'?'checked':'';?> />&nbsp;  Cancelled + reversal
-		</div>
-	</div>
-	<div class="control-group">
-		<div class="span5">
-			<?php $this->widget('bootstrap.widgets.TbButton', array(
+		<div class="control-group">
+			<div class="span5">
+				<?php $this->widget('bootstrap.widgets.TbButton', array(
 					'buttonType'=>'submit',
 					'type'=>'primary',
-					'label'=>'OK',
+					'label'=>'Show',
 					'id'=>'btnPrint'
-				)); ?>
-				&emsp;
-			<?php $this->widget('bootstrap.widgets.TbButton', array(
-                    'buttonType'=>'submit',
-                    'type'=>'primary',
-                    'label'=>'Save to Excel',
-                    'id'=>'btn_xls'
-                )); ?>
-		</div>
-	</div>
-	</div>
-	<div class="span6">
-		
-	</div>
-</div><br />
-<iframe src="<?php echo $url; ?>" class="span12" style="min-height:600px;max-width: 100%"></iframe>
+					)); ?>
+					&emsp;
+					<?php $this->widget('bootstrap.widgets.TbButton', array(
+						'buttonType'=>'submit',
+						'type'=>'primary',
+						'label'=>'Save to Excel',
+						'id'=>'btn_xls'
+						)); ?>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
 
-<?php echo $form->datePickerRow($model,'dummy_date',array('label'=>false,'disabled'=>'disabled','style'=>'display:none'));?>
-<?php $this->endWidget();?>
+			</div>
+		</div><br />
+		<iframe id="iframe" src="<?php echo $url; ?>" class="span12" style="min-height:600px;max-width: 100%"></iframe>
 
-<?php  $this->beginWidget('zii.widgets.jui.CJuiDialog',
-    array(
-        'id'=>'mywaitdialog',
-        'options'=>array(
-            'title'=>'In Progress',
-            'modal'=>true,
-            'autoOpen'=>false,// default is true
-            'closeOnEscape'=>false,
-            'resizable'=>false,
-            'draggable'=>false,
-            'height'=>120,
-            'open'=>// supply a callback function to handle the open event
-                    'js:function(){ // in this function hide the close button
-                         $(".ui-dialog-titlebar-close").hide();
-						 //$(".ui-dialog-content").hide();
-						
-                    }'
-         ))
-);
+		<?php echo $form->datePickerRow($model,'dummy_date',array('label'=>false,'disabled'=>'disabled','style'=>'display:none'));?>
+		<?php $this->endWidget();?>
 
-	$this->widget('bootstrap.widgets.TbProgress',
-    array('percent' => 100, // the progress
-        	'striped' => true,
-        	'animated' => true,
-    )
-);
-?>
+		<?php  $this->beginWidget('zii.widgets.jui.CJuiDialog',
+			array(
+				'id'=>'mywaitdialog',
+				'options'=>array(
+					'title'=>'In Progress',
+					'modal'=>true,
+		            'autoOpen'=>false,// default is true
+		            'closeOnEscape'=>false,
+		            'resizable'=>false,
+		            'draggable'=>false,
+		            'height'=>120,
+		            'open'=>// supply a callback function to handle the open event
+		            'js:function(){ // in this function hide the close button
+		            	$(".ui-dialog-titlebar-close").hide();
+								 //$(".ui-dialog-content").hide();
+
+		            }'
+		        ))
+		    );
+
+				$this->widget('bootstrap.widgets.TbProgress',
+		    array('percent' => 100, // the progress
+		    'striped' => true,
+		    'animated' => true,
+		)
+		);
+		?>
 
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog'); ?>
 <script>
@@ -142,12 +146,49 @@ $this->menu = array(
 		$('#Rptjournallist_to_date').val($('#Rptjournallist_from_date').val());
 		$('.tdate').datepicker('update');
 	})
-    $('#btnPrint').click(function(){
+	$('#btnPrint').click(function(e){
+		e.preventDefault();
+		$('.error_msg').empty();
 		$('#mywaitdialog').dialog('open');
 		$('#scenario').val('print');
+		submitData();
 	})
 	$('#btn_xls').click(function() {
 		$('#scenario').val('export');
 	});
 	
+	function submitData()
+	{
+
+		$.ajax({
+			'type'      : 'POST',
+			'url'       : '<?php echo $this->createUrl('index'); ?>',
+			'dataType'  : 'json',
+			'data'      : $('#journallist-form').serialize(),
+			'success'   :   function (data) 
+			{
+				$('#mywaitdialog').dialog('close');
+				if(data.status='success')
+				{
+					if(!data.error_msg)
+					{
+						$('#Rptjournallist_vo_random_value').val(data.vo_random_value);
+						$('#Rptjournallist_vp_userid').val(data.vp_userid);
+						$('#iframe').show();
+						$("#iframe").attr("src", data.url);
+						$("#iframe").load(function(){
+						$('#mywaitdialog').dialog('close');	
+						})
+						$('#btn_xls').attr('disabled',false);
+					}
+					else
+					{
+						$('#mywaitdialog').dialog('close');	
+						AjaxFlash('danger', data.error_msg)
+					}
+				}
+
+			}
+		});
+	}
 </script>

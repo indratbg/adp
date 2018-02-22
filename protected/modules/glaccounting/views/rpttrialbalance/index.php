@@ -28,14 +28,15 @@ $this->menu = array(
 ?>
 
 <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-		'id' => 'importTransaction-form',
+		'id' => 'trialbalance-form',
 		'enableAjaxValidation' => false,
 		'type' => 'horizontal'
 	));
 ?>
-
-<?php AHelper::showFlash($this)
-?>
+<input type="hidden" name="scenario" id="scenario" />
+<?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
+<?php echo $form->textField($model,'vp_userid',array('style'=>'display:none'));?>
+<?php AHelper::AjaxFlash() ?>
 <?php echo $form->errorSummary(array($model)); ?>
 <br />
 <div class="row-fluid">
@@ -179,21 +180,28 @@ $this->menu = array(
 			<div class="span5">
 
 				<?php $this->widget('bootstrap.widgets.TbButton', array(
-		'label' => 'Print',
-		'type' => 'primary',
-		'id' => 'btnPrint',
-		'buttonType' => 'submit',
-	));
- ?>
- <!-- <a href="<?php echo $url_xls ;?>" id="btn_xls" class="btn btn-primary">Save to Excel</a> -->
-  <button formaction="<?php echo Yii::app()->request->baseUrl.'?r=glaccounting/rpttrialbalance/GetXls&rand_value='.$rand_value.'&user_id='.$user_id ;?> " id="btn_xls" class="btn btn-primary">Save to Excel</button>
+					'label' => 'Show',
+					'type' => 'primary',
+					'id' => 'btnPrint',
+					'buttonType' => 'submit',
+				));
+				 ?>
+				 &emsp;
+				 <?php $this->widget('bootstrap.widgets.TbButton', array(
+						'label' => 'Save to Excel',
+						'type' => 'primary',
+						'id' => 'btn_xls',
+						'buttonType' => 'submit',
+					));
+				 ?>
+
  	
 			</div>
 		</div>
 	</div>
 </div>
 <br />
-<iframe src="<?php echo $url; ?>" class="span12" style="min-height:600px;max-width: 100%"></iframe>
+<iframe id="iframe" src="<?php echo $url; ?>" class="span12" style="min-height:600px;max-width: 100%"></iframe>
 <?php echo $form->datePickerRow($model,'dummy_date',array('label'=>false,'style'=>'display:none'));?>
 <?php $this->endWidget(); ?>
 
@@ -228,17 +236,13 @@ $this->menu = array(
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog'); ?>
 <script>
 	var glAcctCd='%';
-	var url_xls = '<?php echo $url_xls ?>';
 	init();
 	function init()
 	{
+		$('#btn_xls').attr('disabled',true);
 		cek_branch();
 		$('.tdate').datepicker({'format':'dd/mm/yyyy'});
 		GetSLA(glAcctCd);
-		if(url_xls=='')
-		{
-			$('#btn_xls').attr('disabled','disabled');
-		}
 	}
 
 
@@ -362,8 +366,16 @@ $this->menu = array(
         
 	}
 	
-	$('#btnPrint').click(function(){
+	$('#btnPrint').click(function(e){
+		e.preventDefault();
+		$('.error_msg').empty();
 		$('#mywaitdialog').dialog('open');
+		$('#scenario').val('print');
+		submitData();
+	});
+
+	$('#btn_xls').click(function(){
+		$('#scenario').val('export');
 	})
 	
 	function Get_End_Date(tgl)
@@ -381,5 +393,40 @@ $this->menu = array(
 		$('#Rpttrialbalance_end_date').val(new_date);
 		$('.tdate').datepicker('update');
 	}
-	
+	function submitData()
+	{
+
+		$.ajax({
+			'type'      : 'POST',
+			'url'       : '<?php echo $this->createUrl('index'); ?>',
+			'dataType'  : 'json',
+			'data'      : $('#trialbalance-form').serialize(),
+			'success'   :   function (data) 
+			{
+				
+				if(data.status='success')
+				{
+					if(!data.error_msg)
+					{
+						$('#Rpttrialbalance_vo_random_value').val(data.vo_random_value);
+						$('#Rpttrialbalance_vp_userid').val(data.vp_userid);
+						$('#iframe').show();
+						$("#iframe").attr("src", data.url);
+						
+						$("#iframe").load(function(){
+						$('#mywaitdialog').dialog('close');	
+						});
+						
+						$('#btn_xls').attr('disabled',false);
+					}
+					else
+					{
+						$('#mywaitdialog').dialog('close');
+						AjaxFlash('danger', data.error_msg)
+					}
+				}
+
+			}
+		});
+	}
 </script>

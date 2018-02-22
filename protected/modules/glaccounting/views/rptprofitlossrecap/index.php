@@ -27,31 +27,17 @@ $this->menu = array(
 ?>
 
 <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-		'id' => 'importTransaction-form',
+		'id' => 'profitlossrecap-form',
 		'enableAjaxValidation' => false,
 		'type' => 'horizontal'
 	));
 ?>
 <br />
+<?php AHelper::AjaxFlash();?>
 <?php echo $form->errorSummary(array($model)); ?>
-
-<?php
-$month = array(
-	'01' => 'January',
-	'02' => 'February',
-	'03' => 'March',
-	'04' => 'April',
-	'05' => 'May',
-	'06' => 'June',
-	'07' => 'July',
-	'08' => 'August',
-	'09' => 'September',
-	'10' => 'October',
-	'11' => 'November',
-	'12' => 'December'
-);
-?>
-
+<input type="hidden" name="scenario" id="scenario" />
+<?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
+<?php echo $form->textField($model,'vp_userid',array('style'=>'display:none'));?>
 <div class="row-fluid">
 	<div class="span6">
 		<div class="control-group">
@@ -59,7 +45,7 @@ $month = array(
 				<label>For the month of</label>
 			</div>
 			<div class="span3">
-				<?php echo $form->dropDownList($model, 'month', $month, array(
+				<?php echo $form->dropDownList($model, 'month', AConstant::getArrayMonth(), array(
 					'class' => 'span9',
 					'prompt' => '-Select-'
 				));
@@ -81,11 +67,19 @@ $month = array(
 				<?php $this->widget('bootstrap.widgets.TbButton', array(
 					'buttonType' => 'submit',
 					'type' => 'primary',
-					'label' => 'OK',
+					'label' => 'Show',
 					'id' => 'btnPrint'
 				));
- ?>
-				<a href="<?php echo $url_xls; ?>" id="btn_xls" class="btn btn-primary">Save to Excel</a>
+ 				?>
+ 				&emsp;
+ 					<?php $this->widget('bootstrap.widgets.TbButton', array(
+					'buttonType' => 'submit',
+					'type' => 'primary',
+					'label' => 'Save to Excel',
+					'id' => 'btn_xls'
+				));
+ 				?>
+				
 			</div>
 		</div>
 	</div>
@@ -126,16 +120,10 @@ $month = array(
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog'); ?>
 
 <script>
-
-	var url_xls =  '<?php echo $url_xls ?>';
 	init();
 	function init()
 	{
-	
-		if(url_xls=='')
-		{
 		$('#btn_xls').attr('disabled',true);
-		}
 		$("#iframe").offset({left:2});
         $("#iframe").css('width',($(window).width()));
 	}
@@ -144,7 +132,53 @@ $month = array(
         $("#iframe").offset({left:2});
         $("#iframe").css('width',($(window).width()));
     });
-	$('#btnPrint').click(function(){
+	$('#btnPrint').click(function(e){
+		e.preventDefault();
+		$('.error_msg').empty();
 		$('#mywaitdialog').dialog('open');
-	})
+		$('#scenario').val('print');
+		submitData();
+	});
+	$('#btn_xls').click(function(){
+		
+		$('#scenario').val('export');
+		
+	});
+
+	function submitData()
+	{
+
+		$.ajax({
+			'type'      : 'POST',
+			'url'       : '<?php echo $this->createUrl('index'); ?>',
+			'dataType'  : 'json',
+			'data'      : $('#profitlossrecap-form').serialize(),
+			'success'   :   function (data) 
+			{
+				
+				if(data.status='success')
+				{
+					if(!data.error_msg)
+					{
+						$('#Rptprofitlossrecap_vo_random_value').val(data.vo_random_value);
+						$('#Rptprofitlossrecap_vp_userid').val(data.vp_userid);
+						$('#iframe').show();
+						$("#iframe").attr("src", data.url);
+						
+						$("#iframe").load(function(){
+						$('#mywaitdialog').dialog('close');	
+						});
+						
+						$('#btn_xls').attr('disabled',false);
+					}
+					else
+					{
+						$('#mywaitdialog').dialog('close');
+						AjaxFlash('danger', data.error_msg)
+					}
+				}
+
+			}
+		});
+	}
 </script>

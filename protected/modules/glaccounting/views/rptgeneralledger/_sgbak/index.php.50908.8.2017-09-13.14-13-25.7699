@@ -27,14 +27,14 @@ $this->menu = array(
 ?>
 
 <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-		'id' => 'generalledger-form',
+		'id' => 'importTransaction-form',
 		'enableAjaxValidation' => false,
 		'type' => 'horizontal'
 	));
 ?>
 
 
-<?php AHelper::AjaxFlash();
+<?php AHelper::showFlash($this)
 ?>
 <?php echo $form->errorSummary(array($model)); ?>
 <input type="hidden" name="scenario" id="scenario" />
@@ -52,7 +52,6 @@ $this->menu = array(
 				));
 				?>
 				<?php echo $form->textField($model,'vo_random_value',array('style'=>'display:none'));?>
-				<?php echo $form->textField($model,'vp_userid',array('style'=>'display:none'));?>
 			</div>
 			<div class="span1">
 				<label>Year</label>
@@ -182,7 +181,7 @@ $this->menu = array(
 			<div class="span5">
 
 				<?php $this->widget('bootstrap.widgets.TbButton', array(
-						'label' => 'Show',
+						'label' => 'Print',
 						'type' => 'primary',
 						'id' => 'btnPrint',
 						'buttonType' => 'submit',
@@ -202,7 +201,7 @@ $this->menu = array(
 	</div>
 </div>
 <br />
-<iframe id="iframe" src="<?php echo $url; ?>" class="span12" style="min-height:600px;max-width: 100%"></iframe>
+<iframe src="<?php echo $url; ?>" class="span12" style="min-height:600px;max-width: 100%"></iframe>
 <?php echo $form->datePickerRow($model,'dummy_date',array('label'=>false,'style'=>'display:none'));?>
 <?php $this->endWidget(); ?>
 
@@ -237,15 +236,17 @@ $this->menu = array(
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog'); ?>
 <script>
 
+	var url_xls = '<?php echo $url ?>';
 	var glAcctCd='';
 	init();
 	function init()
 	{
 		cek_branch();
 		$('.tdate').datepicker({'format':'dd/mm/yyyy'});
-		
-		$('#btn_xls').attr('disabled','disabled');
-		
+		if(url_xls=='')
+		{
+			$('#btn_xls').attr('disabled','disabled');
+		}
 		 GetSLA(glAcctCd);
 	}
 
@@ -389,52 +390,12 @@ $this->menu = array(
 		$('#Rptgeneralledger_end_date').val(new_date);
 		$('.tdate').datepicker('update');
 	}
-	 $('#btnPrint').click(function(e){
-	 	$('.error_msg').empty();
-        e.preventDefault();
+	 $('#btnPrint').click(function(){
         $('#mywaitdialog').dialog('open');
         $('#scenario').val('print');
-        submitData();
-
     })
     $('#btn_xls').click(function() {
         $('#scenario').val('export');
     });
 	
-	function submitData()
-	{
-
-		$.ajax({
-			'type'      : 'POST',
-			'url'       : '<?php echo $this->createUrl('index'); ?>',
-			'dataType'  : 'json',
-			'data'      : $('#generalledger-form').serialize(),
-			'success'   :   function (data) 
-			{
-				
-				if(data.status='success')
-				{
-					if(!data.error_msg)
-					{
-						$('#Rptgeneralledger_vo_random_value').val(data.vo_random_value);
-						$('#Rptgeneralledger_vp_userid').val(data.vp_userid);
-						$('#iframe').show();
-						$("#iframe").attr("src", data.url);
-						
-						$("#iframe").load(function(){
-						$('#mywaitdialog').dialog('close');	
-						})
-						
-						$('#btn_xls').attr('disabled',false);
-					}
-					else
-					{
-						$('#mywaitdialog').dialog('close');
-						AjaxFlash('danger', data.error_msg)
-					}
-				}
-
-			}
-		});
-	}
 </script>

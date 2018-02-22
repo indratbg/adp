@@ -16,12 +16,24 @@ class Rpttrialbalance extends ARptForm
 	public $to_sla;
 	public $dummy_date;
 	public $tempDateCol   = array();  
-	
+	public $col_name = array('gl_acct'=>'Gl account',
+							'sl_acct'=>'Sl Account',
+							'main_acct_name'=>'Main Account Name',
+							'acct_name'=>'Account name',
+							'beg_bal'=>'Beginning Balance',
+							'debit'=>'Debit',
+							'credit'=>'Credit',
+							'end_bal'=>'End Balance'
+							);
+
+	/**
+	 * @return validate attributes
+	 */
 	public function rules()
 	{
 		return array(
 			array('bgn_date,end_date', 'application.components.validator.ADatePickerSwitcherValidatorSP'),
-			array('month,year,report_mode,cancel_flg,branch_cd,branch_option,from_gla,to_gla,from_sla,to_sla','safe')
+			array('vo_random_value,vp_userid,month,year,report_mode,cancel_flg,branch_cd,branch_option,from_gla,to_gla,from_sla,to_sla','safe')
 		);
 	}
 	
@@ -33,7 +45,16 @@ class Rpttrialbalance extends ARptForm
 		);
 	}
 		
-
+/**
+ * This function call store procedure "SPR_TRIAL_BALANCE"
+ * @param  $bgn_acct = Beginning GL Account ex. 1424, 1200
+ * @param  $end_acct = Ending GL Account ex. 1424, 1200
+ * @param  $bgn_sub = Beginning SL Account ex. 100000,100030
+ * @param  $end_sub = Ending SL Account ex. 100000,100030
+ * @param  $branch = Branch ex. JK,BR
+ * @param  $rpt_mode = Report mode available value DETAIL/SUMMARY
+ * @return number
+ */
 	public function executeRpt($bgn_acct,$end_acct,$bgn_sub,$end_sub,$branch, $rpt_mode)
 	{
 	 
